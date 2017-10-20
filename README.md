@@ -29,6 +29,6 @@ The pipeline begins with gene expression arrays for each tissue, where each gene
 
 1. Construct cross-tissue correlation and pvalue matrices
 2. Compute rowsum -log(pvalue) for ranking interactions and filter for factors proteins as secreted
-3. condition correlation matrix on a by-gene basis for pathway enrichment 
+3. Condition correlation matrix on a by-gene basis for pathway enrichment 
 
 Any questions/comments, please contact mseldin3@gmail.com
