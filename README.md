@@ -25,7 +25,7 @@ While this can be easily automatied, we felt more confident with inspection due 
 #Pipeline execution
 The pipeline begins with gene expression arrays for each tissue, where each gene is represented as an averaged value across probes used in the array. The arrays used were
 
-#We subdivided the commands into the following steps:
+#We subdivided the commands into the following steps (all listed in the R_script file):
 
 1. Construct cross-tissue correlation and pvalue matrices
 2. Compute rowsum -log(pvalue) for ranking interactions and filter for factors proteins as secreted
