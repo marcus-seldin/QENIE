@@ -1,4 +1,4 @@
-# QENIE
+# QENIE (Quantitative Endocrine Network Interaction Estimation)
 Correlation-based approach for identification of endocrine interactions
 
 #Required package
