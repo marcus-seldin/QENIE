@@ -1,8 +1,8 @@
 #Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
 
 #Import your data
-Adipose <- 
-Liver <- read.csv("path_location/Liver", header=TRUE)
+Adipose <- QENIE/Adipose
+Liver <- QENIE/Liver
 
 #Using these two datasets we will proceed:
 
@@ -17,7 +17,55 @@ ll = as.data.frame(liv.musc.p)
 liv.musc.log = -log(ll)
 
 
-Condition correlation matrix on a by-gene basis for pathway enrichment
 
-Secreted_proteins = Secreted_proteins_Uniprot
+liv.musc.log = as.data.frame(liv.musc.log)
+#compute the rowsum
+liv.adip.table = rowSums(ll, na.rm = T)
+liv.adip.table = as.data.frame(liv.adip.table)
 
+#import secreted peptides
+Secreted_proteins = QENIE/Secreted_proteins_Uniprot
+
+#retain only secreted peptides
+liv.adip.table$m = match(row.names(liv.adip.table),Secreted_proteins_Uniprot[ ,"Gene names  (primary )"], nomatch = 0)
+liv.adip.table$mm = liv.adip.table$m >0
+liv.adip.table = liv.adip.table[!grepl("FALSE",liv.adip.table$mm),]
+liv.adip.table$m = NULL
+liv.adip.table$mm = NULL
+
+#Normalize the Ssec score by number of target tissue probes (In this case, adipose contains 12243 genes)
+liv.adip.table$Ssec = liv.adip.table[,1]/12243
+
+
+#order by "sig score"
+final = liv.musc.table[order(liv.musc.table$Ssec, decreasing=T), , drop = FALSE]
+write.table(final, file="Liver X Adipose ranked by sig score",row.names=T, col.names=T, sep='\t', quote=F)
+
+#This produces a table to each secreted protein and its respective significance score across adipose transcripts
+
+#Condition correlation matrix on a by-gene basis for pathway enrichment - this example will focus on the protein, Notum
+#remove gene of interest (Notum) from the correlation matrix
+
+#positively correlated pathways - "enhanced by protein"
+Notum = liv.adip.cor["Notum ",]
+Notum  = t(Notum )
+Notum  = as.data.frame(Notum)
+target = Notum[order(Notum, decreasing=T), , drop = FALSE]
+target = head(target, 500)
+write.table(target, file="Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
+
+#negatively correlated pathways - "suppressed by protein"
+Notum = liv.adip.cor["Notum ",]
+Notum  = t(Notum)
+Notum  = as.data.frame(Notum)
+target = Notum[order(Notum, decreasing=F), , drop = FALSE]
+target = head(target, 500)
+write.table(target, file="Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
+
+#All pathways engaged by protein
+Notum = liv.adip.cor["Notum ",]
+Notum  = t(Notum)
+Notum  = as.data.frame(abs(Notum))
+target = Notum[order(Notum, decreasing=T), , drop = FALSE]
+target = head(target, 500)
+write.table(target, file="Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
