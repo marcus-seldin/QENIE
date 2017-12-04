@@ -1,1 +1,6 @@
-Using the 
+#Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
+
+#Import your data
+Adipose <- read.csv("path_location/Adipose", header=TRUE)
+Liver <- read.csv("path_location/Liver", header=TRUE)
+
