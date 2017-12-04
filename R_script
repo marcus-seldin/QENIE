@@ -4,3 +4,15 @@
 Adipose <- read.csv("path_location/Adipose", header=TRUE)
 Liver <- read.csv("path_location/Liver", header=TRUE)
 
+#Using these two datasets we will proceed:
+
+#Construct cross-tissue correlation and pvalue matrices
+library(WGCNA)
+liv.adip.cor = bicor(Adipose, Liver, use='pairwise.complete.obs')
+liv.adip.cor = as.data.frame(liv.adip.cor)
+liv.adip.p = corPvalueStudent(liv.adip.p, nSamples = 106)
+
+ll = as.data.frame(liv.musc.p)
+liv.musc.log = -log(ll)
+
+#compute the rowsum
