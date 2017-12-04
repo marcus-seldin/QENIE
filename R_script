@@ -12,7 +12,11 @@ liv.adip.cor = bicor(Adipose, Liver, use='pairwise.complete.obs')
 liv.adip.cor = as.data.frame(liv.adip.cor)
 liv.adip.p = corPvalueStudent(liv.adip.p, nSamples = 106)
 
+#Compute rowsum -log(pvalue) for ranking interactions and filter for factors proteins as secreted
 ll = as.data.frame(liv.musc.p)
 liv.musc.log = -log(ll)
 
-#compute the rowsum
+
+Condition correlation matrix on a by-gene basis for pathway enrichment
+
+
