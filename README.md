@@ -21,8 +21,12 @@ While this can be easily automatied, we felt more confident with inspection due 
   Citation:
   McClurg P, Janes J, Wu C, Delano DL, Walker JR, Batalov S, Takahashi JS, Shimomura K, Kohsaka A, Bass J, Wiltshire T, Su AI (2007) Genomewide association analysis in diverse inbred mice: power and population structure. Genetics 176(1):675-83.
 
-#Pipeline execution
-The pipeline begins with gene expression arrays for each tissue, where each gene is represented as an averaged value across probes used in the array. The arrays used were
+#Data pretreatment:  
+Prior to analysis 
+
+#Pipeline execution and sata pretreatment
+The pipeline begins with gene expression arrays for each tissue, where each gene is represented as an averaged value across probes used in the array.  These aggregate matrices are also provided in this repository. Mouse expression arrays were performed on a Affymetrix HT_MG-430A 
+GEO Accession for arrays: GSE64770
 
 #We subdivided the commands into the following steps (all listed in the R_script file):
 
