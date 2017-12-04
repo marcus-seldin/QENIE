@@ -11,7 +11,7 @@ In addition to tissue-specific expression arrays, this pipeline also imports inf
   
   Citation:
   UniProt: the universal protein knowledgebase Nucleic Acids Res. 45: D158-D169 (2017)  
-  
+#These are provided as: Secreted_proteins_Uniprot
 #Tissue-specific expression
 Filtering for tissue-specific expression was performed by manual inspection using BioGPS on the following mouse arrays <http://biogps.org/dataset/BDS_00009/>: GeneAtlas GNF1M, gcrma
 While this can be easily automatied, we felt more confident with inspection due to the small number of samples per tissue and consequent high level of variation among expression 
