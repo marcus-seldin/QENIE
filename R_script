@@ -1,7 +1,7 @@
 #Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
 
 #Import your data
-Adipose <- read.csv("path_location/Adipose", header=TRUE)
+Adipose <- 
 Liver <- read.csv("path_location/Liver", header=TRUE)
 
 #Using these two datasets we will proceed:
@@ -19,4 +19,5 @@ liv.musc.log = -log(ll)
 
 Condition correlation matrix on a by-gene basis for pathway enrichment
 
+Secreted_proteins = Secreted_proteins_Uniprot
 
