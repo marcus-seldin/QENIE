@@ -13,14 +13,13 @@ liv.adip.cor = as.data.frame(liv.adip.cor)
 liv.adip.p = corPvalueStudent(liv.adip.p, nSamples = 106)
 
 #Compute rowsum -log(pvalue) for ranking interactions and filter for factors proteins as secreted
-ll = as.data.frame(liv.musc.p)
-liv.musc.log = -log(ll)
+ll = as.data.frame(liv.adip.p)
+liv.adip.log = -log(ll)
 
+liv.adip.log = as.data.frame(liv.adip.log)
 
-
-liv.musc.log = as.data.frame(liv.musc.log)
 #compute the rowsum
-liv.adip.table = rowSums(ll, na.rm = T)
+liv.adip.table = rowSums(liv.adip.log, na.rm = T)
 liv.adip.table = as.data.frame(liv.adip.table)
 
 #import secreted peptides
