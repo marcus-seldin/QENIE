@@ -32,7 +32,7 @@ liv.adip.table = liv.adip.table[!grepl("FALSE",liv.adip.table$mm),]
 liv.adip.table$m = NULL
 liv.adip.table$mm = NULL
 
-#Normalize the Ssec score by number of target tissue probes (In this case, adipose contains 12243 genes)
+#Normalize the Ssec score by number of target tissue probes (In this case, adipose contains 12242 genes)
 liv.adip.table$Ssec = liv.adip.table[,1]/length(liv.adip.log)
 liv.adip.table$liv.adip.table = NULL
 
@@ -41,6 +41,8 @@ final = liv.adip.table[order(liv.adip.table$Ssec, decreasing=T), , drop = FALSE]
 write.table(final, file="Liver X Adipose ranked by sig score",row.names=T, col.names=T, sep='\t', quote=F)
 
 #This produces a table to each secreted protein and its respective significance score across adipose transcripts
+#Note that Notum is listed as the 5th with an Sssec of 4.148
+#For our pipeline, we next check the tissue-specificty using BioGPS - note that this step is not necessary, but makes us more confident when conditioning the pathway enrichment.  This moves Notum up to the 2nd ranked protein  
 
 #Condition correlation matrix on a by-gene basis for pathway enrichment - this example will focus on the protein, Notum
 #remove gene of interest (Notum) from the correlation matrix
