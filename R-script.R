@@ -22,7 +22,7 @@ liv.adip.table = rowSums(liv.adip.log, na.rm = T)
 liv.adip.table = as.data.frame(liv.adip.table)
 
 #import secreted peptides
-Secreted_proteins <- read.delim(QENIE/Secreted_proteins_Uniprot, header = T)
+Secreted_proteins <- read.delim("Secreted_proteins_Uniprot.txt", header = T)
 
 
 #retain only secreted peptides
