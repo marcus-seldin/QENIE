@@ -1,5 +1,5 @@
-#Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
-
+#Note: This example performs QENIE on the liver-to-adipose circuit. 
+#Preproccesing of data from the original study is listed in the README file 
 #Import your data
 Adipose <- read.delim("adipose.txt", header = T)
 Liver <- read.delim("liver.txt", header = T)
