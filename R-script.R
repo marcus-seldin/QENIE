@@ -1,8 +1,8 @@
 #Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
 
 #Import your data
-Adipose <- read.delim(QEINIE/adipose, header = T)
-Liver <- read.delim(QEINIE/liver, header = T)
+Adipose <- read.delim('adipose.txt', check.names=F)
+Liver <- read.delim('liver.txt', check.names=F)
 
 #Using these two datasets we will proceed:
 
@@ -65,7 +65,7 @@ Notum  = t(Notum)
 Notum  = as.data.frame(Notum)
 target = Notum[order(Notum, decreasing=F), , drop = FALSE]
 target = head(target, 500)
-write.table(target, file=" Negative Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
+write.table(target, file="Negative Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
 
 #All pathways engaged by protein
 Notum = bicor.data["Notum",]
