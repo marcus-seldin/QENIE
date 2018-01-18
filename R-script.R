@@ -65,7 +65,7 @@ Notum  = t(Notum)
 Notum  = as.data.frame(Notum)
 target = Notum[order(Notum, decreasing=F), , drop = FALSE]
 target = head(target, 500)
-write.table(target, file=" Negative Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
+write.table(target, file="Negative Notum Liver X Adipose Pathways Enrichment File", col.names=F, sep='\t', quote=F)
 
 #All pathways engaged by protein
 Notum = bicor.data["Notum",]
