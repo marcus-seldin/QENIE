@@ -1,8 +1,13 @@
 #Note: This example performs QENIE on the liver-to-adipose circuit. 
 #Preproccesing of data from the original study (GSE64770) is listed in the README.md file 
 #Import your data
+<<<<<<< HEAD
 Adipose <- read.delim("adipose.txt", header = T)
 Liver <- read.delim("liver.txt", header = T)
+=======
+Adipose <- read.delim('adipose.txt', check.names=F)
+Liver <- read.delim('liver.txt', check.names=F)
+>>>>>>> 5d9a158f973a06ba82a204bbb93dac838b380bea
 
 #Using these two datasets we will proceed:
 
