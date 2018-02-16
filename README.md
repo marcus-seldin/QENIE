@@ -33,3 +33,13 @@ Our pipeline begins with gene expression arrays for liver and adipose tissue, wh
 3. Condition correlation matrix on a by-gene basis for pathway enrichment 
 
 Any questions/comments, please contact mseldin3@gmail.com
+
+
+
+Additional GEO Accessions for datasets used in the study are listed below:
+
+
+chow aorta: GSE38120
+chow heart: GSE77263
+chow liver: GSE16780
+chow adipose: GSE42890
