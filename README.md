@@ -24,7 +24,7 @@ While this can be easily automated, we felt more confident with inspection due t
 ## Data pretreatment:  
 Mouse expression arrays were performed on a Affymetrix HT_MG-430A  
 GEO Accession for arrays: GSE64770  
-The pipeline begins with gene expression arrays for liver and adipose tissue, where each gene is represented as an averaged value across probes used in the array.  These aggregate matrices are also provided in this repository.  The arrays consisted of ~22,400 probes  which were aggregated to 12,242 genes to be used for cross-tissue analysis.  Therefore, each liver and adipose tissue expression matrix consists of 12,242 genes among 106 unique HMDP strains.   
+The pipeline begins with gene expression arrays for liver and adipose tissue, where each gene is represented as an averaged value across probes and strains used in the array.  These aggregate matrices are also provided in this repository.  The arrays consisted of ~22,400 probes  which were aggregated to 12,242 genes to be used for cross-tissue analysis.  Therefore, each liver and adipose tissue expression matrix consists of 12,242 genes among 106 unique HMDP strains.   
 
 ## We subdivided the commands into the following steps (all listed in the R_script file):
 
