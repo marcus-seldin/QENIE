@@ -1,6 +1,7 @@
-#Note: This example performs QENIE on the liver-to-adipose circuit.  For purposes of replication and ease, other datasets are provided whereby similar analyses could easily be applied
-
+#Note: This example performs QENIE on the liver-to-adipose circuit. 
+#Preproccesing of data from the original study (GSE64770) is listed in the README.md file 
 #Import your data
+
 Adipose <- read.delim('adipose.txt', check.names=F)
 Liver <- read.delim('liver.txt', check.names=F)
 
@@ -22,7 +23,7 @@ liv.adip.table = rowSums(liv.adip.log, na.rm = T)
 liv.adip.table = as.data.frame(liv.adip.table)
 
 #import secreted peptides
-Secreted_proteins <- read.delim(QENIE/Secreted_proteins_Uniprot, header = T)
+Secreted_proteins <- read.delim("Secreted_proteins_Uniprot.txt", header = T)
 
 
 #retain only secreted peptides
