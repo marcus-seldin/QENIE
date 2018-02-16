@@ -40,9 +40,9 @@ Any questions/comments, please contact mseldin3@gmail.com
 Additional GEO Accessions for datasets used in the study are listed below:
 
 
-chow aorta: GSE38120
-chow heart: GSE77263
-chow liver: GSE16780
-chow adipose: GSE42890
+chow aorta: GSE38120  
+chow heart: GSE77263  
+chow liver: GSE16780  
+chow adipose: GSE42890  
 HF/HS: hypothalamus: GSE79551
 
