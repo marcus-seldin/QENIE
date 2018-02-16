@@ -14,7 +14,7 @@ In addition to tissue-specific expression arrays, this pipeline also imports inf
 ## These are provided as: Secreted_proteins_Uniprot
 ## Tissue-specific expression
 Filtering for tissue-specific expression was performed by manual inspection using BioGPS on the following mouse arrays <http://biogps.org/dataset/BDS_00009/>: GeneAtlas GNF1M, gcrma
-While this can be easily automatied, we felt more confident with inspection due to the small number of samples per tissue and consequent high level of variation among expression 
+While this can be easily automated, we felt more confident with inspection due to the small number of samples per tissue and consequent high level of variation among expression 
 
   GEO code for arrays: GSE1133
   
