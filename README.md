@@ -3,6 +3,7 @@ Correlation-based approach for identification of endocrine interactions
 
 ## Required package
 The Ssec ranking score and protein-specific pathway enrichment commands in R utilize functions from the package WGCNA
+The data preprocessing using the dcast function available via R package reshape2
 
 ## External data
 In addition to tissue-specific expression arrays, this pipeline also imports information from Uniprot to filter for secreted proteins.  This list has been uploaded for ease of pipeline execution, however is subjected to updates.  Revised lists can be retrieved from the following sources:
