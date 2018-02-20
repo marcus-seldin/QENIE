@@ -23,10 +23,14 @@ liv.adip.log = as.data.frame(liv.adip.log)
 liv.adip.table = rowSums(liv.adip.log, na.rm = T)
 liv.adip.table = as.data.frame(liv.adip.table)
 
+#read in Secreted Proteins
+Secreted_proteins <- read.delim("Secreted_proteins_Uniprot.txt", header = T)
 
 
 ranks = liv.adip.table
-ranks$m = match(row.names(ranks),secreted.proteins[ ,1], nomatch = 0)
+
+#create two vectors, one containing secreted factor scores and the other with non-secreted factor scores 
+ranks$m = match(row.names(liv.adip.table),Secreted_proteins$Gene.names...primary.., nomatch = 0)
 ranks$mm = ranks$m >0
 ranks = ranks[!grepl("FALSE",ranks$mm),]
 ranks$m = NULL
@@ -62,6 +66,6 @@ qqplotAnnot = function(x, y,
 
 qqplotAnnot(sec$liv.musc.table,non_sec$liv.musc.table,
             main="QQ-plot,Intestine x liver",
-            xlab="Non-secreted factor Ssec (-log10 p)",
-            ylab="Secreted factor Ssec (-log10 p)"
+            xlab="Non-secreted factor Ssec (-ln p)",
+            ylab="Secreted factor Ssec (-ln p)"
 )
