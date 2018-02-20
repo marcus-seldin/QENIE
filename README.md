@@ -25,13 +25,14 @@ While this can be easily automated, we felt more confident with inspection due t
 ## Data pretreatment:  
 Pretreatment of data is described below: 
 Most mouse expression arrays were performed on a Affymetrix HT_MG-430A, unless otherwise indicated in the GEO accession  
-GEO Accession for arrays: GSE64770  
 
-Raw data deposited in GEO is RMA-normalized microarray data.  From these, each numeric value represents a probe detected in each animal of the HMDP.  Given that a fair number of probes correspond to the same gene, we chose to start witha single expression value for each unique gene (averaged amongst probes).  Also, these studies contain multiple mice per strain.  Given that for each study, mice were fed the same diet and age-matched, we aggregated expression values to one average value per mouse strain.  These averages are discussed in greater detail below:
+GEO Accession for adipose and liver arrays: GSE64770  
+
+Raw data deposited in GEO is RMA-normalized microarray data.  From these, each numeric value represents a probe detected in each HMDP animal.  Given that some of probes correspond to the same gene, we chose to start with a single expression value for each unique gene (averaged amongst probes).  Also, these studies contain multiple mice per strain.  Given that for each study, mice were fed the same diet and age-matched, we aggregated expression values to one average value per mouse strain.  These averages are discussed in greater detail below:
 
 Our pipeline begins with gene expression arrays for liver and adipose tissue, where each gene is represented as an averaged value across probes and strains used in the study.  These aggregate matrices are also provided in this repository.  The arrays consisted of ~22,400 probes which were aggregated to averages for each gene (12,242).  The expression values for each mouse were also averaged to reflect a single value per gene per strain (106).  Therefore, each liver and adipose tissue expression matrix consists of 12,242 genes among 106 unique HMDP strains.   
 
-To account for different arrays containing differing number of genes, a portion of the Ssec pipeline script divides the Ssec score to the total length of the target tissue genes detected.  This step is meant to prevent inflation of these scores by the a larger number of genes detected in each target tissue, thus providing an adequate comparison for values between cross-tissue circuits.
+To account for different arrays containing differing number of genes, a portion of the Ssec pipeline script divides the Ssec score to the total length of the target tissue genes detected.  This step is meant to prevent inflation of these scores by a larger number of genes detected in each target tissue, thus providing an adequate comparison for values between cross-tissue circuits.
 
 ## We subdivided the commands into the following steps (all listed in the R_script file):
 
