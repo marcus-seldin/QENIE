@@ -36,7 +36,7 @@ Our pipeline begins with gene expression arrays for liver and adipose tissue, wh
 3. Condition correlation matrix on a by-gene basis for pathway enrichment 
 
 ## Generation of QQ-Plots to infer secreted vs non-secreted factors
-The script used to generate QQ-plots from the Ssec scores (step 2 above) was designed and provided by Simon Koplev and lists as: QQ-plot_R-script 
+The script used to generate QQ-plots from the Ssec scores (step 2 above) was designed and provided by Simon Koplev and lists as: QQ-Plot_R-script.R
 
 Any questions/comments, please contact mseldin3@gmail.com
 
