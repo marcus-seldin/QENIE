@@ -29,8 +29,8 @@ Secreted_proteins <- read.delim("Secreted_proteins_Uniprot.txt", header = T)
 
 ranks = liv.adip.table
 
-#create two vectors, one containing secreted factor scores and the other with non-secreted factor scores 
-ranks$m = match(row.names(liv.adip.table),Secreted_proteins$Gene.names...primary.., nomatch = 0)
+#create two vectors, one containing secreted factor scores and the other with non-secreted factor scores
+ranks$m = match(row.names(ranks),Secreted_proteins$Gene.names...primary.., nomatch = 0)
 ranks$mm = ranks$m >0
 ranks = ranks[!grepl("FALSE",ranks$mm),]
 ranks$m = NULL
@@ -38,7 +38,7 @@ ranks$mm = NULL
 sec = ranks
 
 ranks = liv.adip.table
-ranks$m = match(row.names(ranks),secreted.proteins[ ,1], nomatch = 0)
+ranks$m = match(row.names(ranks),Secreted_proteins$Gene.names...primary.., nomatch = 0)
 ranks$mm = ranks$m >0
 ranks = ranks[!grepl("TRUE",ranks$mm),]
 ranks$m = NULL
@@ -56,10 +56,10 @@ qqplotAnnot = function(x, y,
     ...
   )
   abline(0, 1, col="red")
-  
+
   q_y = quantile(y, probs=probs, na.rm=TRUE)
   q_x = quantile(x, probs=probs, na.rm=TRUE)
-  
+
   points(q_x, q_y, col="grey", cex=0.6)
   text(q_x, q_y, label=paste0(probs*100, "%"), pos=1, cex=0.8, col="grey")
 }
