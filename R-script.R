@@ -24,7 +24,7 @@ scores = rowSums(-log(liv.adip$p))
 # order by "sig score"
 Ssec = data.frame(Gene_symbol = names(scores), score = scores) %>%
   filter(Gene_symbol %in% Secreted_proteins$`Gene names  (primary )`) %>%
-  mutate(Ssec = score / length(scores)) %>%
+  mutate(Ssec = score / length(row.names(Adipose)) %>%
   select(-score) %>%
   arrange(desc(Ssec))
 
