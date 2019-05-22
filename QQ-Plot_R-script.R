@@ -39,7 +39,7 @@ qqplotAnnot = function(x, y,
   text(q_x, q_y, label=paste0(probs*100, "%"), pos=1, cex=0.8, col="grey")
 }
 
-qqplotAnnot(sec, non_sec,
+qqplotAnnot(non_sec, sec,
             main = "QQ-plot, Liver x adipose",
             xlab = "Non-secreted factor Ssec (-ln p)",
             ylab = "Secreted factor Ssec (-ln p)"
