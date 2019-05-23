@@ -43,6 +43,10 @@ To account for different arrays containing differing number of genes, a portion 
 ## Generation of QQ-Plots to infer secreted vs non-secreted factors
 The script used to generate QQ-plots from the Ssec scores (step 2 above) was designed and provided by Simon Koplev and listed as: QQ-Plot_R-script.R
 
+## Acknowledgements 
+We would like to thank Arjun Sarathi and Manikandan Narayanan at the Bioinformatics and Integrative Data Sciences (BIRDS) Lab, IIT Madras for their thorough troubleshooting and identifying a switch in the initially-described QQ-Plot Axes.   
+
+
 Any questions/comments, please contact mseldin3@gmail.com
 
 
