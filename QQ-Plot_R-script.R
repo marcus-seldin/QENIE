@@ -1,7 +1,7 @@
 library(WGCNA)
 
 #This script produces a QQ-plot estimating the relative Ssec scores for secreted vs non-secreted factors across tissues
-#This script was graciously provided and devised by Simon Koplev
+#This script was graciously provided and devised by Simon Koplev.  In addition, We would like to thank Arjun Sarathi and Manikandan (Mani) Narayanan at the Bioinformatics and Integrative Data Sciences (BIRDS) Lab at IIT Madras for their thorough troubleshooting and identifying a switch in the initially-described QQ-Plot Axes.
 
 #read in Secreted Proteins
 Secreted_proteins <- read.delim("Secreted_proteins_Uniprot.txt", header = T, check.names = F)
